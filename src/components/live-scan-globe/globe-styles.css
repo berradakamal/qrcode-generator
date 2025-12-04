@@ -1,0 +1,28 @@
+.cesium-viewer {
+  background-color: transparent !important;
+}
+
+.cesium-viewer-bottom,
+.cesium-viewer-timelineContainer,
+.cesium-viewer-animationContainer,
+.cesium-viewer-fullscreenContainer,
+.cesium-viewer-vrContainer,
+.cesium-viewer-geocoderContainer,
+.cesium-viewer-toolbar,
+.cesium-navigationHelpButton-wrapper,
+.cesium-baseLayerPicker-dropDown,
+.cesium-infoBox,
+.cesium-selection-wrapper,
+.cesium-credit-logoContainer,
+.cesium-credit-textContainer {
+  display: none !important;
+}
+
+.cesium-widget {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.cesium-widget canvas {
+  border-radius: 0.5rem;
+}

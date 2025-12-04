@@ -1,0 +1,10 @@
+export { Navigation } from './Navigation';
+export { HeroSection } from './HeroSection';
+export { QRTypesSection } from './QRTypesSection';
+export { AnalyticsSection } from './AnalyticsSection';
+export { PricingSection } from './PricingSection';
+export { Footer } from './Footer';
+export { GlobeViz } from './GlobeViz';
+export { PhoneScreen } from './phone-screens/PhoneScreen';
+export { QR_TYPES } from './data/qr-types';
+export type { QRType } from './data/qr-types';
