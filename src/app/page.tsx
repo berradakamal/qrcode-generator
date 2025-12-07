@@ -6,6 +6,7 @@ import {
   QRTypesSection,
   AnalyticsSection,
   PricingSection,
+  BlogSection,
   Footer,
 } from '@/components/landing';
 
@@ -17,6 +18,7 @@ const LandingPage = () => {
       <QRTypesSection />
       <AnalyticsSection />
       <PricingSection />
+      <BlogSection />
       <Footer />
     </div>
   );

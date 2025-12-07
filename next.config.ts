@@ -5,6 +5,30 @@ import path from "path";
 const cesiumSource = "node_modules/cesium/Build/Cesium";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'generator-qrcode.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.generator-qrcode.com',
+        pathname: '/**',
+      },
+    ],
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.plugins.push(

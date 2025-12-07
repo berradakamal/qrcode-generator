@@ -2,10 +2,18 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Palette } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from '@/components/ui/dialog';
+import { QRStudio } from '@/components/qr-studio';
 
 export const HeroSection = () => {
   const [qrText, setQrText] = useState('https://mysite.com');
+  const [studioOpen, setStudioOpen] = useState(false);
   const qrColor = '000000';
   const qrBgColor = 'ffffff';
 
@@ -82,10 +90,26 @@ export const HeroSection = () => {
                 <img src={qrImageUrl} alt="QR Preview" className="w-40 h-40 rounded-lg mix-blend-multiply transition-opacity duration-300" />
                 <p className="mt-4 text-xs font-medium text-slate-400 flex items-center gap-1"><Download className="w-3 h-3" /> 100% Free Download</p>
               </div>
+              <button
+                onClick={() => setStudioOpen(true)}
+                className="w-full py-3 border border-slate-200 rounded-xl text-sm font-bold text-slate-600 hover:text-blue-600 hover:border-blue-500 transition-all flex items-center justify-center gap-2"
+              >
+                <Palette className="w-4 h-4" /> Customize Design
+              </button>
             </div>
           </div>
         </motion.div>
       </div>
+
+      <Dialog open={studioOpen} onOpenChange={setStudioOpen}>
+        <DialogContent className="!max-w-[900px] w-[95vw] max-h-[85vh] overflow-hidden p-0 bg-white border-slate-200 rounded-2xl">
+          <DialogTitle className="sr-only">QR Code Studio</DialogTitle>
+          <DialogDescription className="sr-only">Customize your QR code design</DialogDescription>
+          <div className="h-[80vh]">
+            <QRStudio mode="landing" initialContent={qrText} compact />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
